@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation using JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            width: 300px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 2px solid #333;
+        }
+        input, button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align:center;">Registration Form</h2>
+
+    <form onsubmit="return validateForm()">
+
+        <!-- oninput event -->
+        <label>Name:</label>
+        <input type="text" id="name" oninput="checkName()">
+
+        <label>Password:</label>
+        <input type="password" id="password">
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <script>
+        /* oninput validation */
+        function checkName() {
+            let name = document.getElementById("name").value;
+            if (name.length < 3) {
+                alert("Name must be at least 3 characters long");
+            }
+        }
+
+        /* onsubmit validation */
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let password = document.getElementById("password").value;
+
+            if (name === "") {
+                alert("Name cannot be empty");
+                return false; // stop form submission
+            }
+
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true; // allow submission
+        }
+    </script>
+
+</body>
+</html>

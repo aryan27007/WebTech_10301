@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Div used for layout */
+.container {
+    width: 70%;
+    margin: 40px auto;
+    border: 2px solid #333;
+    background-color: #ffffff;
+}
+
+/* Header section */
+.header {
+    background-color: #222;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Content section */
+.content {
+    padding: 20px;
+}
+
+/* Footer section */
+.footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Span used for inline styling */
+.highlight {
+    color: red;
+    font-weight: bold;
+}
+
+.keyword {
+    color: blue;
+    font-weight: bold;
+}
+
+.note {
+    background-color: yellow;
+    padding: 3px 6px;
+}

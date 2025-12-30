@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Functions and Scope in JavaScript</title>
+</head>
+<body>
+
+    <h2>Open Console to See Output</h2>
+
+    <script>
+        /* ---------- Global Scope ---------- */
+        var globalVar = "I am global (var)";
+        let globalLet = "I am global (let)";
+        const globalConst = "I am global (const)";
+
+        /* ---------- User-defined Function ---------- */
+        function showScopes() {
+            console.log("Inside function:");
+
+            // Function scope
+            var functionVar = "Function scope var";
+            let functionLet = "Function scope let";
+            const functionConst = "Function scope const";
+
+            console.log(functionVar);
+            console.log(functionLet);
+            console.log(functionConst);
+
+            /* ---------- Block Scope ---------- */
+            if (true) {
+                var blockVar = "Block var (NOT block scoped)";
+                let blockLet = "Block let (block scoped)";
+                const blockConst = "Block const (block scoped)";
+
+                console.log(blockVar);
+                console.log(blockLet);
+                console.log(blockConst);
+            }
+
+            console.log(blockVar); // Accessible
+            // console.log(blockLet);   // Error
+            // console.log(blockConst); // Error
+        }
+
+        /* ---------- Function Invocation ---------- */
+        showScopes();
+
+        console.log("Outside function:");
+        console.log(globalVar);
+        console.log(globalLet);
+        console.log(globalConst);
+
+        /* ---------- Another User-defined Function ---------- */
+        function addNumbers(a, b) {
+            return a + b;
+        }
+
+        let result = addNumbers(5, 10);
+        console.log("Addition Result:", result);
+
+    </script>
+
+</body>
+</html>

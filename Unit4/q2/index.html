@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show/Hide & Toggle Class Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .box {
+            width: 200px;
+            height: 100px;
+            margin: 20px auto;
+            background-color: #4CAF50;
+            color: white;
+            line-height: 100px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        /* CSS class to toggle */
+        .highlight {
+            background-color: #FF5722;
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Show/Hide & Toggle Class Demo</h2>
+
+    <!-- Box element -->
+    <div class="box" id="myBox">Hello World</div>
+
+    <!-- Buttons -->
+    <button onclick="showBox()">Show</button>
+    <button onclick="hideBox()">Hide</button>
+    <button onclick="toggleHighlight()">Toggle Highlight</button>
+
+    <script>
+        const box = document.getElementById("myBox");
+
+        // Show the element
+        function showBox() {
+            box.style.display = "block";
+        }
+
+        // Hide the element
+        function hideBox() {
+            box.style.display = "none";
+        }
+
+        // Toggle CSS class dynamically
+        function toggleHighlight() {
+            box.classList.toggle("highlight");
+        }
+    </script>
+
+</body>
+</html>
